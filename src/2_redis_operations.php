@@ -29,8 +29,9 @@ $value = $redis->get("article_views_234");
 var_dump($value);
 
 
-// 3. Redis Data Types: String, List, Hash, Set, Sorted set
-// Hash - you can represent objects (think of it as a one-level deep JSON object)
+// ---- Redis Data Types: String, List, Hash, Set, Sorted set -----
+
+// 3. Hash - you can represent objects (think of it as a one-level deep JSON object)
 // HSET, HGET and HGETALL, HINCRBY, and HDEL
 $redis->hset("taxi_car", "brand", "Toyota");
 $redis->hset("taxi_car", "model", "Yaris");
@@ -62,14 +63,17 @@ var_dump($taxi_car);
 echo "</pre>";
 
 
-// 4. LPUSH, RPUSH, LPOP, RPOP, LLEN, LRANGE
-// These are the important commands for working with the list type in Redis
-// LPUSH – prepends element(s) to a list.
-// RPUSH – appends element(s) to a list.
-// LPOP – removes and retrieves the first element of a list.
-// RPOP – removes and retrieves the last element of a list.
-// LLEN – gets the length of a list.
-// LRANGE – gets elements from a list.
+// 4. List
+// LPUSH, RPUSH, LPOP, RPOP, LLEN, LRANGE
+/* 
+These are the important commands for working with the list type in Redis
+LPUSH – prepends element(s) to a list.
+RPUSH – appends element(s) to a list.
+LPOP – removes and retrieves the first element of a list.
+RPOP – removes and retrieves the last element of a list.
+LLEN – gets the length of a list.
+LRANGE – gets elements from a list. 
+*/
 $list = "PHP Frameworks List";
 $redis->rpush($list, "Symfony 2");
 $redis->rpush($list, "Symfony 1.4");
